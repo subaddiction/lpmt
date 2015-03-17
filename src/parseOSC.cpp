@@ -1093,6 +1093,14 @@ void testApp::parseOsc()
             quads[activeQuad].camBg = true;
         }
     }
+    
+    // Cam number
+    else if ( m.getAddress() == "/active/cam/num" )
+    {
+        // argument is int32
+        int osc_quad_camNumber = m.getArgAsInt32( 0 );
+            quads[activeQuad].camNumber = osc_quad_camNumber;
+    }
 
     // video HFlip
     else if ( m.getAddress() == "/active/cam/hmirror" )
